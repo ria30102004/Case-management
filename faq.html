@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+      body{
+        background-color:#603813;
+      }  
+      .navbar {
+            overflow: hidden;
+            background-color: #ffdd9f;
+            position:absolute;
+left:0;   
+right:0;     }
+        .navbar-right {
+            float: right;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #603813;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            /* background-color: white; */
+            background-color: #603813;
+            color: white;
+            border-radius: 10px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffdd9f;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0; 
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+    color: white;
+    background-color:#603813;
+  }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .fa-bars {
+            color:  #603813;
+            margin-bottom: 0.5vh
+        }
+        .fa-bars:hover{
+          color: white;
+        }
+        .h2{
+            padding-top:2pxx ;
+        }  
+        .contain{
+            z-index:-1;
+        }
+        .photo{
+            background-color: #603813;
+    height: 93vh;
+    position: relative;
+    z-index: -1;
+    top:7vh;
+    right: 0;
+    justify-content:center; 
+        }
+        h1,p{
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <div class="navbar-right">
+            
+            <div class="dropdown">
+                <button class="dropbtn"> 
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="dropdown-content">
+                  
+                    <a href="#">Notification</a>
+                    <a href="landingpage.html">Home</a>
+                    <a href="casesdetails.html">Cases</a>
+                    <a href="faq.html">Help</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain">
+    <div class="main">
+    <h1>Frequently Asked Questions</h1>
+    <p class="ques">Quick answers to questions you may have.</p>
+    <br>
+    
+        <div class="card">
+            <details>
+                <summary>Can e Adaalat handle various types of legal cases, including civil, criminal, and administrative?</summary>
+                <p class="ans">Yes, e Adaalat is versatile and can be configured to handle a wide range of legal case types, including civil, criminal, administrative, and more.</p>
+            </details>
+        </div>
+        <div class="card">
+            <details>
+                <summary>How does e Adaalat ensure data security and confidentiality for sensitive legal cases?</summary>
+                <p class="ans">e Adaalat employs robust data security measures, including encryption and access controls, to safeguard sensitive legal information and maintain confidentiality.</p>
+            </details>
+        </div>
+        <div class="card">
+            <details>
+                <summary>Can e Adaalat generate reports and analytics to track case progress and performance?</summary>
+                <p class="ans">Yes, e Adaalat offers robust reporting and analytics tools to track case progress, performance, and key metrics.</p>
+            </details>
+        </div>
+        <div class="card">
+            <details>
+                <summary>How does e Adaalat assist in case intake and assignment?</summary>
+                <p class="ans">e Adaalat automates case intake and assignment, ensuring that cases are assigned to the appropriate legal professionals based on predefined criteria, reducing human errors and delays.</p>
+            </details>
+        </div>
+        <div class="card">
+            <details>
+                <summary>What features and tools are available for legal professionals using e Adaalat?</summary>
+                <p class="ans">Legal professionals can access features like case tracking, document management, scheduling tools, communication tools, and reporting capabilities within e Adaalat.</p>
+            </details>
+        </div>
+    
+    </div>
+    <div class="photo"><img src="try2.png" alt="judge"></div>
+    </div>
+</body>
+</html>

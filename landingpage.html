@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lander</title>
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="logowhite.png" height="100" >
+        </div>
+        <input type="checkbox" name="slider" id="menu-btn">
+        <input type="checkbox" name="slider" id="close-btn">
+        <ul class="nav-links">
+            <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+            <li><a href="landingpage.html">Home</a></li>
+            <li><a href="subsciption.html">Pricing</a> </li> 
+            <li><a href="#middle">About Us</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+            <label for="options"></label> 
+    <select name="names" class="names" onchange="window.open(this.options[this.selectedIndex].value,'_top')"> 
+        <option class="selection" value="/login1.html"><a href="login1.html">Login</a></option> 
+        <option class="selection" value="/signup.html"><a href="signup.html">Signup</a></option> 
+        
+    </select>
+        </ul>
+        <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+</nav>
+
+<section id="hero">
+  <div style="display: flex; flex-direction: column; margin-left: 120vh; margin-top: 0;  color: white;">
+    <p style="margin-right:0 ; font-size: 10vh; float: right; text-align: right; font-size: 8vh; font-weight: 800;">e-Adalat :</p>
+    <p style="margin-right:0 ; font-size: 10vh; float: right; text-align: right; font-size: 8vh; font-weight: 800;">Justice At Your</p>
+    <p style="margin-right:0 ; font-size: 10vh; float: right; text-align: right; font-size: 8vh; font-weight: 800;">Fingertips!</p>
+  </div>  
+</section>
+<section id="middle">
+    <div id="motto">
+        <div class="motto">
+            <img src="1_1rAtxlnw26IpXaODWj21EA.jpg" alt="" height="500" width="700">
+         
+        </div>
+        <div class="motto">
+            <br>
+            <h3>About Us</h3>
+            <p>Welcome to e Adalat, your trusted partner in modernizing and streamlining the world of case management. At e Adalat, we are dedicated to transforming the way legal professionals, government agencies, and organizations manage their cases, ensuring a more efficient, transparent, and accessible legal system for all. Our journey began with a simple question: "How can we leverage technology to simplify and enhance the case management process?" That question evolved into a mission to develop an integrated, user-friendly, and comprehensive case management system that caters to the unique needs of legal practitioners and organizations across various sectors. We believe that technology should empower, not intimidate. e Adalat is designed with user-friendliness at its core. You don't need to be a tech guru to use our system; it's intuitive and accessible to all.</p>
+    </div>
+</section>
+<div class="text" style="background-color: #4A2913; color: white; height: 15vh; text-align: center; font-size: 3.8vh; padding-top: 6vh; font-weight: bolder;">"Injustice anywhere is a threat to justice everywhere." - Martin Luther King Jr.</div>
+<footer id="footer">
+    
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Feel free to get in touch with us for any inquiries.</p>
+    </div>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f fa-2x" style="color: #000;"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x" style="color: #000;"></i></a>
+        <a href="#"><i class="fas fa-envelope fa-2x" style="color: #000;"></i></a>
+    </div>
+    <div class="center">
+        &copy; 2023 www.EAdalat.com. All rights reserved!
+    </div>
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Case Details</title>
+    <style>
+        /* Your CSS styles for the navbar */
+        body, h1, p {
+            margin: 0%;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #603813;
+            overflow: hidden;
+            min-height: 100%;
+            min-width: 100%;
+            
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #ffdd9f;
+        }
+        .navbar-right {
+            float: right;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #603813;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            /* background-color: white; */
+            background-color: #603813;
+            color: white;
+            border-radius: 10px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffdd9f;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0; 
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+    color: white;
+    background-color:#603813;
+  }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .fa-bars {
+            color:  #603813;
+        }
+        .fa-bars:hover{
+          color: white;
+        }
+        .h2{
+            padding-top:2pxx ;
+        }
+        /* Your CSS styles for the boxes */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 2vh 0 2vh 0;
+            padding: 2vh 2vh 2vh 2vh;
+            /* height: calc(100vh - 10vh); */
+         
+        }
+        .left-box {
+/*           
+            flex: 1; */
+            background-color: white;
+            padding: 20px;
+            margin-right: 30px;
+            margin-left: 30px;
+            border-radius: 15px;
+            margin-bottom: 203px;
+            /* max-height: 100%; */
+            height: 500px;
+          width: 500px;
+        
+        }
+        .right-container {
+            /* flex: 1; */
+            margin-top: 20px;
+            margin-right:30px;
+            margin-left: 10px;
+            /* display: flex; */
+            height: 500px;
+            flex-direction: column;
+            
+        }
+        .right-box {
+            flex-direction: column;
+            background-color: white;
+            padding: 50px;
+            margin-bottom: 60px;
+            /* height: 400px; */
+            border-radius: 15px;
+            
+        }
+        .right-box lawyer-box{
+              flex-direction: column;
+            }
+        /* CSS for the form and calendar */
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+    justify-content: center; /* Center-align the text boxes horizontally */
+    align-items: center;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"] {
+            background-color: #D9D9D9;
+            width: 80%;
+            padding: 8px; /* Reduce padding to make the input boxes smaller */
+            border: 1px solid #D9D9D9;
+            border-radius: 20px;
+            font-size: 14px; /* Reduce font size */
+            
+            
+        }
+        /* Adjust calendar input appearance (optional) */
+        .form-group input[type="date"] {
+            appearance: none; /* Remove default styles */
+            padding: 8px; /* Reduce padding to make the input boxes smaller */
+            border: 1px solid #D9D9D9;
+            border-radius: 4px;
+            font-size: 14px; /* Reduce font size */
+        }
+        /* Style calendar input arrow (optional) */
+        .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+            background-color: #ffdd9f;
+            color: white;
+            padding: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group input[type="date"]:hover::-webkit-calendar-picker-indicator {
+            background-color: #ffdd9f;
+            color: #ffdd9f;
+        }
+        /* CSS for the tabs */
+        .tabs {
+            display: flex;
+            align-items: flex-start;
+            background-color:white;
+            display: flex;
+    justify-content:left; /* Center-align the text boxes horizontally */
+    align-items: center;
+            border-radius: 8px;
+            
+
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            background-color: #ffdd9f;
+            border-radius: 8px;
+        }
+        /* CSS for the tab content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .navbar {
+    overflow: hidden;
+    background-color: #ffdd9f;
+}
+.navbar-right {
+    float: right;
+}
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: #603813;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: #603813;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+    color: #603813;
+    border-radius: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffdd9f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0; 
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.fa-bars {
+    color:  #603813;
+    display: flex;
+    margin-bottom: 1vh;
+}
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-right">
+            <a href="casedetails.html"><strong>Case Details</strong></a>
+            <a href="hearing.html"><strong>Book a Hearing</strong></a>
+            <a href="payment.html"><strong>Bills and Payment</strong></a>
+            <div class="dropdown">
+                <button class="dropbtn"> 
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="dropdown-content">
+                  
+                    <a href="#">Notification</a>
+                    <a href="landingpage.html">Home</a>
+                    <a href="casedetails.html">Cases</a>
+                    <a href="faq.html">Help</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="left-box">
+          <h2 style="text-align: center; color:#603813;margin-bottom: 10px;">Case Details</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="case-id" name="case-id" placeholder="CO0987" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="case-name" name="case-name" placeholder="Commercial case" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="case-type" name="case-type" placeholder="Advt. Vishwa Kumar" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="law-rep-name" name="law-rep-name" placeholder="Rishabh Bhatia" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="calendar" name="calendar">
+                </div>
+            </form>
+        </div>
+
+        <div class="right-container">
+          <div class="right-box">
+            <h2 style="text-align: center; color: #603813 ;">Past Hearing</h2>
+              <div class="tabs">
+                <button class="tab-btn active" onclick="toggleTab('summary')" style="color: #603813;"><strong>Summary</strong></button>
+                <button class="tab-btn" onclick="toggleTab('detailed')" style="color: #603813;"><strong>Detailed</strong></button>
+                
+              </div>
+              <div id="summary" class="tab-content active">
+                <p style="color: #603813; background-color: #D9D9D9; border: black;">This is a summary of past hearings entered by the lawyer.fkjcbskubfcsknc fhuskgvucb hefcczgkuhzkucs hfucgdhzubdfhcbzdj hguesfhcusbvjsfbvdzbfsjd hfusehfkusbnfujshn</p>
+            </div>
+              <div id="detailed" class="tab-content">
+                  <p style="color: #603813; background-color: #D9D9D9; ">This is the detailed content for past hearings . This is provided by the admin(the full hearing document made by the typist) loifehfeabhfcbzj jfaehcbhabxnjnadjvc fnsjvhusbfuhnskv nfsjkbvkbskjvn </p>
+              </div>
+          </div>
+      
+          <div class="right-box lawyer-box">
+              
+              <div class="tabs">
+                <button class="tab-btn" style="color: #603813; background-color:#ffdd9f; border-radius: 5px;margin-bottom: 20px;"><strong>Lawyer</strong></button>
+          
+              </div>
+                <p style="color: #603813; background-color:#D9D9D9;">These are remarks from the lawyer.</p>
+            </div>
+          </div>
+      </div>
+      
+    </div>
+    
+    <script>
+        function toggleTab(tabId) {
+            // Hide all tab contents
+            var tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+
+            // Show the selected tab content
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
+            }
+
+            // Deactivate all tab buttons
+            var tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            // Activate the clicked tab button
+            event.currentTarget.classList.add('active');
+        }
+        var date=new Date();
+        var year=date.getFullYear();
+        var month=date.getMonth();
+        var today= String(date.getDate()).padStart(2,'0');
+        var datepat=today+'-'+month+'-'+year;
+        document.getElementById("calendar").value=datepat;
+        document.write(datepat);
+    </script>
+</body>
+</html>

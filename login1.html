@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login</title>
+    <style>
+        .navbar {
+    overflow: hidden;
+    background-color: #ffdd9f;
+}
+.navbar-right {
+    float: right;
+}
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: #603813;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+    border-radius: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffdd9f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0; 
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.fa-bars {
+    color:  #603813;
+    display: flex;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="tabs">
+            <ul>
+                <li id="judge" class="not"><a href="judgel.html">Judge</a></li>
+                <li id="client"  class="not"><a href="clientl.html">Client</a></li>
+                <li id="emp"  class="not"><a href="empl.html">Employee</a></li>
+                <li class="active" id="admin" style="padding-right: 4.2vh;"><a href="login1.html" id="onlink">Organisation</a></li>
+        </ul> 
+        </div>
+        <form action="adminconnect.php">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn"><a href="organisationprof.html">Login</a></button>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="signup.html">Register</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

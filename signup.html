@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp page</title>
+     </style>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="tabs">
+            <ul>
+          <li class="active" id="admin"><a href="signup.html" id="onlink">Organisation</a></li>
+          <li id="client"  class="not"><a href="clientlog.html">Client</a></li>
+          <!--<li id="emp"  class="not"><a href="emplog.html">Employee</a></li>-->
+        </ul> 
+        </div>
+    
+        <form  method="post" >
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Name" id="name" name="name" class="norm" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Username" id="user" name="user" class="norm" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Age" id="age" name="age" class="norm" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="gender">
+                <p><b>Gender :</b></p><br>
+            </div>
+            <div class="input-radio">
+                
+                <input type="radio" class="radio" id="Male" value="m" name="gender"><div class="a">Male</div>
+                <input type="radio" class="radio" id="Female" value="f" name="gender"><div class="a">Female</div>
+                <input type="radio" class="radio" id="Other" value="o" name="gender"><div class="a">Other</div>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" class="norm" id="email" name="email" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="tel" placeholder="Mobile" class="norm" required id="tel" name="tel">
+                <i class='bx bxs-user'></i>
+            </div>
+            <!--<div class="gender">
+                <p><b>Address :</b></p><br>
+            </div>-->
+            <div class="input-box">
+                <input type="text" placeholder="Address" class="norm" required id="address" name="address">
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Set Password" minlength="8" maxlength="15" required id="pass" name="pass" class="norm">
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" id="cpass" name="cpass" required class="norm">
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                
+            </div>
+
+            <button type="submit" class="btn" name="submit" >Sign Up</button>
+
+            <div class="register-link">
+                <p>Already have an account? <a href="login1.html">Sign in</a></p>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

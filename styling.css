@@ -1,0 +1,267 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Righteous&display=swap');
+
+
+ /* @font-face {
+    
+    font-family: 'righteousregular';
+    src: url('C:\xampp\htdocs\righteous-regular-webfont.woff2') format('woff2'),
+         url('C:\xampp\htdocs\righteous-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'montserratthin';
+    src: url('C:\xampp\htdocs\montserrat-variablefont_wght-webfont.woff2') format('woff2'),
+         url('C:\xampp\htdocs\montserrat-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }*/
+
+*{
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+body{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: url('Artboard\ 1.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 485px;
+    border: 2px solid rgba(0,0,0,.2);
+    
+    /* backdrop-filter: blur(20px);*/
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color: white;
+    border-radius: 10px;
+    padding: 0px 0px;
+    margin-left: 40px;
+    margin-top: 70px;
+    margin-bottom: 40px;
+
+}
+
+.wrapper form{
+    background: #FFDD9F;
+    width: 485px;
+}
+
+.wrapper h1{
+    font-family: 'Righteous', cursive;
+    font-size: 36px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.wrapper .input-box{
+    display: flex;
+   
+    width: 100%;
+    position: relative;
+    height: 50px;
+    margin: 15px 0;
+}
+
+.norm{
+    width: 85%;
+    height: 100%;
+    background: transparent;
+    font-size: 16px;
+    color: black;
+    padding: 20px 45px 20px 20px;
+    border: none;
+    margin: 0px 40px 40px;
+    outline: none;
+    border: 2px solid #603813;
+    border-radius: 40px;
+}
+
+.input-box input::placeholder{
+    color: gray;
+}
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;    
+}
+
+.wrapper .remember-forgot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: 15px 0 15px 15px;
+}
+
+.remember-forgot label input{
+    accent-color: white;
+    margin-left: 25px;
+}
+
+.remember-forgot a{
+    color: white;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    margin-left: 40px;
+    height: 45px;
+    background: #603813;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    align-items: center;
+    padding-left: 168px;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+
+.wrapper .register-link{
+    font-size: 14.5px;
+   
+    margin: 20px 120px 15px;
+
+}
+
+.register-link p a{
+    color: darkblue;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+}
+textarea{
+    width: 85%;
+    resize: none;
+    background: transparent;
+    margin-left: 40px;
+    font-size: 16px;
+    color: black;
+    padding: 20px 25px 25px 20px;
+    
+    border: none;
+    outline: none;
+    border: 2px solid #603813;
+    border-radius: 30px;
+
+}
+
+h1{
+    color: #603813;
+}
+.input-area{
+    color: white;
+}
+.input-radio{
+    
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+    
+    
+    font-size: medium;
+}
+.a{
+    margin-right: 90px;
+}
+#Male{
+    margin-left: 17px;
+}
+.gender{
+    margin-bottom: -5px;
+    margin-left: 38px;
+    padding-left: 7px;
+}
+  
+
+
+  ul{
+    
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    
+
+    
+  }
+  li {
+   
+    background: transparent;
+    text-align: center;
+    
+    
+    cursor: pointer;
+    font-weight: 600;
+    
+  }
+ 
+/*.tabs{
+    background-color: #603813;
+    display: flex;
+    flex-direction: row;
+}*/
+
+  .active{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 15px 86px;
+    margin: 0;
+    background-color: #FFDD9F;
+    
+  }
+.not{
+    padding: 15px 81px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    margin: 0;   
+}
+
+.not a{
+    color: white;
+}
+
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+  h1{
+    margin-top: 17px;
+    
+  }
+  

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="myscripts.js"></script>
+</head>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 680px;
+  margin: auto; 
+}
+.tabs__box {
+  border-radius: 10px;
+  border: 2px solid white;
+  height: auto; 
+  width: 680px; 
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  
+}
+.tabs__label {
+  padding: 10px 16px;
+  cursor: pointer;
+  border: 2px solid #603813;
+  color: white;
+  background-color: #603813;
+  border-radius: 10px;
+  text-align: center; 
+}
+.tabs__radio {
+  display: none;
+}
+.tabs__content {
+  order: 1;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 0.9em;
+  display: none;
+}
+.tabs__radio:checked + .tabs__label {
+  font-weight: bold;
+  color: #603813;
+}
+.tabs__radio:checked + .tabs__label + .tabs__content {
+  display: block;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: left;
+  flex-wrap: wrap;
+}
+.col-1 {
+  flex-basis: 50%;
+  flex-grow: 1;
+  background-image: url(https://aws-legalgroup.com/wp-content/uploads/2022/12/Inheritance-Law.jpg);
+  background-size: 109vh;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+.logo {
+  width: 200px;
+  margin-bottom: 30px;
+}
+.col-2 {
+  align-items: left;
+  flex-basis: 50%;
+  flex-grow: 1;
+  text-align: left;
+  background-color: #603813;
+  width: 100px;
+}
+.h2 {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.section {
+  display: flex;
+  justify-content: space-evenly;
+}
+.box {
+  border: 2px solid #603813;
+  height: auto; /* Adjust the height as needed */
+  width: 45%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px; 
+  margin: 10px; 
+  margin-top: 30px;
+  text-align: center; 
+}
+
+
+.button {
+  background-color: #603813;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px; 
+}
+.navbar {
+  overflow: hidden;
+  background-color: #ffdd9f;
+}
+.navbar-right {
+  float: right;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: #603813;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+  border-radius: 10px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffdd9f;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0; 
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.fa-bars {
+  color:  #603813;
+}
+
+</style>
+<body>
+<div class="navbar">
+    <div class="navbar-right">
+       
+        <div class="dropdown">
+            <button class="dropbtn"> 
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="dropdown-content">
+                
+                
+                <a href="landingpage.html">Home</a>
+                
+                <a href="faq.html">Help</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="container">
+    <div class="col-1">
+      <img src="" class="logo">
+    </div>
+
+    <div class="col-2">
+      <div class="tabs">
+        <div class="tabs__box">
+          <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
+            
+          <label for="tab1" class="tabs__label" style="color: #FFDD9F; margin-right: 470px;">Organisation</label>
+          
+          <div class="tabs__content">
+            <p style="text-align: left;"><br>e-Adalat is a one-stop solution for all your legal proceedings. Continue your journey with us and enjoy a seamless experience.</p>
+            <p style="text-align: left;"><strong>Key features:</strong></p>
+            <ol>
+              <li style="text-align: left;">Manage your cases easily and hassle-free.</li>
+              <li style="text-align: left;">Stay fully updated on each case.</li>
+              <li style="text-align: left;">Eliminate worries about document misplacement.</li>
+              <li style="text-align: left;">Experience the use of a fully organized data system.</li>
+              <li style="text-align: left;">Receive preplanned times and dates for your cases.</li>
+            </ol>
+            <button style="margin-right: 375px;" class="button">Try free trial for one week</button>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="box1 box">
+          <h3 style="color: #603813;">Monthly plan</h3>
+          <br>
+          <p><strong>₹5000/- per month</strong></p>
+          <h6 style="color: white;"><strong>save ₹300 per month</strong></h6>
+          <br>
+          <button class="button">Buy Now</button>
+        </div>
+        <div class="box2 box">
+          <h3 style="color: #603813;">Yearly plan</h3>
+          <br>
+          <p><strong>₹56478/- per year</strong></p>
+          <h6><strong>save ₹300 per month</strong></h6>
+          <br>
+          <button align="left" class="button">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--TABS-->
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Profile</title>
+    <link rel="stylesheet" href="sty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .right{
+            background-color:#603813;
+        }
+        .navbar {
+    overflow: hidden;
+    background-color: #ffdd9f;
+}
+.navbar-right {
+    float: right;
+}
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: #603813;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+    color:#603813;
+    border-radius: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffdd9f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0; 
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.fa-bars {
+    color:  #603813;
+    display: flex;
+    margin-bottom: 1vh;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <!-- Use a right-aligned wrapper div for navigation links -->
+        <div class="navbar-right">
+          <a href="casedetails.php"><strong>Case Details</strong></a>
+          <a href="hearing.php"><strong>Book a Hearing</strong></a>
+          <a href="payment.php"><strong>Bills and Payment</strong></a>
+          <div class="dropdown">
+            <button class="dropbtn"> 
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="dropdown-content">
+              
+              <a href="#">Notification</a>
+              <a href="landingpage.php">Home</a>
+              <a href="casedetails.php">Cases</a>
+              <a href="faq.php">Help</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+   <!--
+<nav class="navbar">
+      <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        
+        <ul class="navbar-links  active" id="navbar-links">
+            <li class="list"><h1 class="hey">Hey!!</h1></li>
+            <li class="list"><a href="#">Notifications</a></li>
+            <li class="list"><a href="#">Home</a></li>
+            <li class="list"><a href="#">Profile</a></li>
+            <li class="list"><a href="#">Help</a></li>
+            <li class="list"><a href="#">Logout</a></li>
+        
+    </div>
+        <div class="navbar-toggle" id="toggle-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+<script>
+    const toggleButton=document.getElementById('toggle-button');
+const naviList=document.getElementById('navbar-links');
+toggleButton.addEventListener('click',()=>{
+list.classList.toggle('active');
+})
+</script>
+-->
+
+<div class="main">
+    <div class="left">
+        <div class="lhs">
+        <div class="pic"><img src="https://media.istockphoto.com/id/682897825/photo/confident-businesswoman-over-gray-background.jpg?s=2048x2048&w=is&k=20&c=xMAX1Z_GPccTo7iWjSX5T55aO0qxMr64nEj0GxLfGfs=" alt="pic" class="img"></div>
+        <div class="btn"><button>Change Picture</button></div>
+        <div class="details">
+            <ul class="list">
+                <li class="basics"><h3>Username :</h3><p class="use">ria2004</p> </li>
+                <li class="basics"><h3>Email :</h3><p class="use">ria152130@gmail.com</p></li>
+                <li class="basics"><h3>Mobile No :</h3><p class="use">7776946988</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="right">
+        <div class="rhs">
+        <div class="heading"><h2>Client Information</h2></div>
+        <div class="info">
+            <ul class="deets"> 
+                <li class="dets"><h3>Full name :</h3><p class="d">  Ambadan Ria Nandanan</p></li>
+                <li class="dets"><h3>Age :</h3><p class="d">  18</p></li>
+                <li class="dets"><h3>Gender :</h3><p class="d">  Female</p></li>
+                <li class="dets"><h3 class="ress">Address :</h3><p class="add">  A/203 Pleasant Park, Tirupati Nagar, Phase 2, Bolinj Virar West E-50 Unit 4 MIDC Tarapur Palghar 401303 </p></li>
+                <li class="dets"><h3>Aadhar No :</h3><p class="d">  2011 4032 6782</p></li>
+                <li class="dets"><h3>Alternate No :</h3><p class="d">  8329028742</p></li>
+            </ul>
+        </div>
+        <div class="case"><button>Add/Update Details</button></div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+

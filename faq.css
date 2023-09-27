@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Righteous&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #603813;
+    padding-left: 30px;
+    scrollbar-width: none;
+}
+
+h1{
+    color: #603813;
+    padding-top: 40px;
+    padding-left: 10px;
+    font-size: 36px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ques{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+h4{
+    padding-bottom: 6px;
+}
+
+.card{
+    /* border: 2px solid #603813; */
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 52dvw;
+    margin-left: 0px;
+    margin-bottom: -10px;
+    padding: 20px;
+}
+
+.main,.photo {
+    display: flex;
+    flex-direction: column;
+}
+
+.contain{
+    display: flex;
+    flex-direction: row;
+}
+
+.photo{
+    background-color: #603813;
+    height: 93vh;
+    position: fixed;
+    top:7vh;
+    right: 0;
+    justify-content:center;
+}
+
+summary{
+    font-weight: 600;
+}
+
+.ans{
+    padding-top: 10px;
+}
