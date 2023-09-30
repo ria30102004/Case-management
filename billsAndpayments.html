@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #603813;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #ffdd9f;
+        }
+
+        .navbar-right {
+            float: right;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #603813;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: #ffdd9f;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            color: #ddd;
+            background-color: #603813;
+            border-radius: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffdd9f;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            color: white;
+            background-color: #603813;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .fa-bars {
+            color:  #603813;
+        }
+
+        .fa-bars:hover {
+            color: white;
+        }
+
+        /* SPLITTING The page */
+        .container {
+            display: flex;
+            padding: 10px;
+            height: 80vh;
+        }
+
+        .div1 {
+            flex: 30%;
+            background-color: white;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 35px;
+            padding: 10px;
+            border-radius: 20px;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .div2 {
+            flex: 70%;
+            background-color: white;
+            margin-top: 20px;
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .options {
+            padding: 10px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            height: 40%;
+        }
+
+        .option {
+            cursor: pointer;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        .filter-container {
+            padding: 10px;
+            border-left: 3px solid #603813;
+            background-color: #fff;
+            height: 100%;
+        }
+
+        .center-button {
+            background-color: #603813;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .center-button:hover {
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+
+        caption {
+            font-weight: 600;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        table, th, td {
+            padding: 0.9rem;
+            margin: auto;
+            width: 830px;
+            line-height: 17px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        .filtering{
+            display: inline-block;
+            justify-items: space-around;
+            padding-right: 47px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-right">
+        <a href="index6.html"><strong>Case Details</strong></a>
+        <a href="#news"><strong>Book a Hearing</strong></a>
+        <a href="#news"><strong>Bills and Payment</strong></a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="dropdown-content">
+                <!-- <a href="#">Hey!</a> -->
+                <a href="#">Notification</a>
+                <a href="lanc.html">Home</a>
+                <a href="#">Profile</a>
+                <a href="#">Help</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="div1">
+        <div class="options">
+            <div class="option" id="pastPaymentsOption"><center>Past Payments</center></div>
+            <div class="option" id="remainingPaymentOption"><center>Due Payments</center></div>
+            <div class="option" id="futurePaymentOption"><center>Future Payment Details</center></div>
+        </div>
+    </div>
+    <div class="div2">
+        <div class="filter-container">
+            <div class="filtering">
+                <center>
+                    Case ID:
+                    <select id="caseIdFilter">
+                        <option value="">All</option>
+                        <option value="C154326">C154326</option>
+                        <option value="FI32426">FI32426</option>
+                        <option value="CP94876">CP94876</option>
+                    </select>
+                </center>
+            </div>
+           
+        <table border="black" id="paymentsTable">
+            <caption>Past Payments</caption>
+            <div class="filtering ">
+                <center>
+                    From Date:
+                    <input type="date" id="fromDateFilter">
+                </center>
+            </div>
+            <div class="filtering">
+                <center>
+                    To Date:
+                    <input type="date" id="toDateFilter">
+                </center>
+            </div>
+            <button class="center-button" id="filterButton">Apply Filter</button>
+        </div>
+            <tr>
+                <th>Sr No.</th>
+                <th>Date</th>
+                <th>Case ID</th>
+                <th>Invoice No</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>03/09/2023</td>
+                <td>CI54326</td>
+                <td>100-04</td>
+                <td>5,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>06/09/2023</td>
+                <td>FI32426</td>
+                <td>100-09</td>
+                <td>9,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>09/09/2023</td>
+                <td>CP94876</td>
+                <td>100-03</td>
+                <td>6,000</td>
+            </tr>
+        </table>
+    </div>
+    <div class="div2">
+        <table border="black" id="paymentsTableR">
+            <caption>Due Payments</caption>
+            <tr>
+                <th>Sr No.</th>
+                <th> Due Date</th>
+                <th>Case ID</th>
+                <th>Amount Due</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>07/09/2023</td>
+                <td>CI54326</td>
+                <td>7,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>09/09/2023</td>
+                <td>FI32426</td>
+                <td>3,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>06/09/2023</td>
+                <td>CP94876</td>
+                <td>4,000</td>
+            </tr>
+        </table>
+        <table border="black" id="paymentsTableF">
+            <caption> Future Payment Details</caption>
+            <tr>
+                <th>Sr No.</th>
+                <th>Case ID</th>
+                <th> Agreement</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>CI54326</td>
+                <td><a href="https://data.templateroller.com/pdf_docs_html/1929/19298/1929800/payment-agreement-template_print_big.png">View</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>FI32426</td>
+                <td><a href="https://data.templateroller.com/pdf_docs_html/1929/19298/1929800/payment-agreement-template_print_big.png">View</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>CP94876</td>
+                <td><a href="https://data.templateroller.com/pdf_docs_html/1929/19298/1929800/payment-agreement-template_print_big.png">View</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- Existing code ... -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const pastPaymentsOption = document.getElementById("pastPaymentsOption");
+        const remainingPaymentOption = document.getElementById("remainingPaymentOption");
+        const futurePaymentOption = document.getElementById("futurePaymentOption");
+        const paymentsTable = document.getElementById("paymentsTable");
+        const paymentsTableR = document.getElementById("paymentsTableR");
+        const paymentsTableF = document.getElementById("paymentsTableF");
+
+        function hideTables() {
+            paymentsTable.style.display = "none";
+            paymentsTableR.style.display = "none";
+            paymentsTableF.style.display = "none";
+        }
+
+        function displayPaymentsTable(data) {
+            hideTables();
+            paymentsTable.style.display = "block";
+            populatePaymentsTable(data, paymentsTable);
+        }
+
+        function displayPaymentsTableR(data) {
+            hideTables();
+            paymentsTableR.style.display = "block";
+            populatePaymentsTable(data, paymentsTableR);
+        }
+
+        function displayPaymentsTableF(data) {
+            hideTables();
+            paymentsTableF.style.display = "block";
+
+            populatePaymentsTable(data, paymentsTableF);
+        }
+        function populatePaymentsTable(data, table) {
+                // Clear existing rows
+                table.innerHTML = "";
+          
+                // Create table header
+                const headerRow = table.insertRow();
+                for (const key in data[0]) {
+                  if (data[0].hasOwnProperty(key)) {
+                    const th = document.createElement("th");
+                    th.textContent = key;
+                    headerRow.appendChild(th);
+                  }
+                }
+          
+                // Populate table rows
+                data.forEach((payment, index) => {
+                  const row = table.insertRow();
+                  for (const key in payment) {
+                    if (payment.hasOwnProperty(key)) {
+                      const cell = row.insertCell();
+                      cell.textContent = payment[key];
+                    }
+                  }
+                });
+              }
+          
+              pastPaymentsOption.addEventListener("click", function () {
+                displayPaymentsTable(paymentsData);
+              });
+          
+              remainingPaymentOption.addEventListener("click", function () {
+                displayPaymentsTableR(paymentsData);
+              });
+          
+              futurePaymentOption.addEventListener("click", function () {
+                displayPaymentsTableF(paymentsData);
+              });
+      
+        futurePaymentOption.addEventListener("click", function () {
+            displayPaymentsTableF(paymentsData);
+            pastPaymentsOption.classList.remove("active");
+            remainingPaymentOption.classList.remove("active");
+            futurePaymentOption.classList.add("active");
+        });
+
+        remainingPaymentOption.addEventListener("click", function () {
+            displayPaymentsTableR(paymentsData);
+            pastPaymentsOption.classList.remove("active");
+            remainingPaymentOption.classList.add("active");
+            futurePaymentOption.classList.remove("active");
+        });
+
+        // Existing code for filtering...
+        const fromDateFilter = document.getElementById("fromDateFilter");
+const toDateFilter = document.getElementById("toDateFilter");
+const caseIdFilter = document.getElementById("caseIdFilter");
+const filterButton = document.getElementById("filterButton");
+
+filterButton.addEventListener("click", function () {
+    const fromDate = fromDateFilter.value;
+    const toDate = toDateFilter.value;
+    const selectedCaseId = caseIdFilter.value;
+
+    let filteredData = paymentsData;
+
+    if (fromDate || toDate) {
+        filteredData = filterPaymentsByDate(filteredData, fromDate, toDate);
+    }
+
+    if (selectedCaseId) {
+        filteredData = filterPaymentsByCaseId(filteredData, selectedCaseId);
+    }
+
+    if (pastPaymentsOption.classList.contains("active")) {
+        displayPaymentsTable(filteredData);
+    } else if (remainingPaymentOption.classList.contains("active")) {
+        displayPaymentsTableR(filteredData);
+    } else if (futurePaymentOption.classList.contains("active")) {
+        displayPaymentsTableF(filteredData);
+    }
+});
+
+function filterPaymentsByDate(data, fromDate, toDate) {
+    return data.filter((payment) => {
+        const paymentDate = new Date(payment.Date);
+        const filterFromDate = new Date(fromDate);
+        const filterToDate = new Date(toDate);
+
+        return (
+            (!fromDate || paymentDate >= filterFromDate) &&
+            (!toDate || paymentDate <= filterToDate)
+        );
+    });
+}
+
+function filterPaymentsByCaseId(data, caseId) {
+    return data.filter((payment) => !caseId || payment["Case ID"] === caseId);
+}
+
+        // Sample data for demonstration (you should replace this with your actual data)
+        const paymentsData = [
+            {
+                Date: "03/09/2023",
+                "Case ID": "CI54326",
+                "Invoice No": "100-04",
+                Amount: "5,000",
+            },
+            {
+                Date: "06/09/2023",
+                "Case ID": "FI32426",
+                "Invoice No": "100-09",
+                Amount: "9,000",
+            },
+            {
+                Date: "09/09/2023",
+                "Case ID": "CP94876",
+                "Invoice No": "100-03",
+                Amount: "6,000",
+            },
+            {
+                Date: "05/09/2023",
+                "Case ID": "CP92276",
+                "Invoice No": "101-05",
+                Amount: "3,000",
+            },
+           
+        ];
+
+       
+        hideTables();
+    });
+</script>
+
+</body>
+</html>
