@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>avg_payment page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #603813;
+            overflow: hidden;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 30px;
+        }
+
+        .card.box1 {
+            width: 100%;
+            max-width: 350px;
+            height: 400px;
+            background-color: #FFDD9F;
+            color: #603813;
+            border-radius: 0;
+        }
+
+        .card.box2 {
+            width: 100%;
+            max-width: 450px;
+            height: 480px;
+            background-color: #ffffff;
+            border-radius: 1;
+        }
+
+        .text {
+            font-size: 13px;
+        }
+
+        .box1 .btn.btn-primary {
+            background-color: #603813;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        form .row {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-control {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            box-shadow: none;
+            height: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 15px 0px;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+        }
+
+        .inputWithIcon {
+            position: relative;
+        }
+
+        img {
+            width: 50px;
+            height: 20px;
+            object-fit: cover;
+        }
+
+        .inputWithIcon span {
+            position: absolute;
+            right: 0;
+            bottom: 9px;
+            color: #603813;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn.btn-primary {
+            width: 100%;
+            max-width: 300px;
+            height: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #603813;
+            border: 1px solid #ddd;
+            margin: 20px auto;
+        }
+
+        .inputWithIcon-left {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .inputWithIcon-left input {
+            padding-left: 30px;
+        }
+
+        .inputWithIcon-left span {
+            position: absolute;
+            left: 10px;
+            color: #603813;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .card.box1 {
+                max-width: 100%;
+                width: auto;
+            }
+
+            .card.box2 {
+                max-width: 100%;
+                width: auto;
+            }
+
+            .form-control {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .btn.btn-primary {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-light d-md-flex align-items-center">
+        <div class="card box1 shadow-sm p-md-5 p-4">
+            <div class="d-flex flex-column">
+
+                <div class="mb-4">
+                    <label>
+                        <h4><strong>Payment Methods</strong></h4>
+                    </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="debitCard"
+                            value="debitCard" checked>
+                        <label class="form-check-label" for="debitCard">
+                            <h6>Debit Card</h6>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard"
+                            value="creditCard">
+                        <label class="form-check-label" for="creditCard">
+                            <h6>Credit Card</h6>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="upi" value="upi">
+                        <label class="form-check-label" for="upi">
+                            <h6>UPI</h6>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="wallet" value="wallet">
+                        <label class="form-check-label" for="wallet">
+                            <h6>Wallet</h6>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="netbanking"
+                            value="netbanking">
+                        <label class="form-check-label" for="netbanking">
+                            <h6>Netbanking</h6>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card box2 shadow-sm">
+            <div class="d-flex align-items-center justify-content-between p-md-5 p-4">
+                <span class="h5 fw-bold m-0"><strong>Secure Checkout</strong></span>
+            </div>
+
+            <div id="debitCardDetails" class="hidden">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input class="form-control" type="text" placeholder="Card Number">
+                                <span><img
+                                        src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png"
+                                        alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input type="text" class="form-control" placeholder="Expiration Date">
+                                <span class="fas fa-calendar-alt"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input type="password" class="form-control" placeholder="Code CVV">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input class="form-control text-uppercase" type="text" placeholder="Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="homepageButton" class="text-center mt-3 d-none">
+                        <button type="button" class="btn btn-primary" onclick="goToHomePage()">Go to Homepage</button>
+                    </div>
+                </div>
+            </div>
+            <div id="creditCardDetails" class="hidden">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input class="form-control" type="text" placeholder="Card Number">
+                                <span><img
+                                        src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png"
+                                        alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input type="text" class="form-control" placeholder="Expiration Date">
+                                <span class="fas fa-calendar-alt"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input type="password" class="form-control" placeholder="Code CVV">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                            <div class="inputWithIcon">
+                                <input class="form-control text-uppercase" type="text" placeholder="Name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="upiDetails" class="hidden">
+                <div class="inputWithIcon">
+                    <i class="fab fa-google-pay"
+                        style="color: #3c260d; font-size: 24px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                    <input type="text" class="form-control" placeholder="UPI ID">
+                </div>
+            </div>
+            <div id="walletDetails" class="hidden">
+                <div class="inputWithIcon">
+                    <i class="fas fa-wallet"
+                        style="color: #3c260d; font-size: 24px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                    <input type="text" class="form-control" placeholder="Wallet Number">
+                </div>
+
+            </div>
+            <div id="netbankingDetails" class="hidden">
+                <div class="inputWithIcon">
+                    <i class="fas fa-university"
+                        style="color: #3c260d; font-size: 24px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                    <input type="text" class="form-control" placeholder="Enter Bank Details">
+                </div>
+            </div>
+            <div class="col-12 px-md-5 px-4 mt-3">
+                <button type="button" class="btn btn-primary w-100">Proceed for Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const radioButtons = document.querySelectorAll('input[name="paymentMethod"]');
+        radioButtons.forEach(function (radioButton) {
+            radioButton.addEventListener('change', function () {
+                const selectedMethod = this.value;
+                document.querySelectorAll('.hidden').forEach(function (element) {
+                    element.style.display = 'none';
+                });
+                document.getElementById(selectedMethod + 'Details').style.display = 'block';
+            });
+        });
+        document.querySelectorAll('.hidden').forEach(function (element) {
+            element.style.display = 'none';
+        });
+        document.getElementById('debitCardDetails').style.display = 'block';
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
