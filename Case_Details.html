@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href="dycalendar.css">
     <title>Case Details</title>
     <style>
         
@@ -107,7 +109,7 @@
             margin-right: 30px;
             margin-left: 30px;
             border-radius: 15px;
-            margin-bottom: 203px;
+            margin-bottom: 30px;
             max-height: 100%;
             max-width: 100%;
         }
@@ -121,7 +123,8 @@
         .right-box {
             background-color: white;
             padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 20px; 
+            /* space to add calendar */
             max-width: 100%;
             border-radius: 15px;
         }
@@ -135,7 +138,7 @@
 
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 13px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -191,7 +194,7 @@
         }
 
         .forms-group button[type="submit"]:hover {
-            background-color: #8B4513;
+            background-color: #8b4513;
         }
 
         .forms-group input[type="text"][name="detailed-report"] {
@@ -237,7 +240,42 @@
         .tab-content.active {
             display: block;
         }
+        #calendar {
+       border: 1.2px solid #0e0d0d;
+       text-align: center;
+       height: 248px;
+       width: 300px;
+       margin: auto;
+       padding: auto;
+       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #calendar #dycalendar{
+        width: 100%;
+        padding: 3px;
+      }
+      #dycalendar table{
+        width: 100%;
+        margin-top: 8px;
+      }
+      #dycalendar table td{
+       font-weight: 600;
+       color:#0f0f0f;
+      }
+      #dycalendar .dycalendar-header{
+        font-weight: 600;
+         color:#0f0f0f;
+      }
+      #dycalendar .dycalendar-target-date{
+       background-color:#8b4513;;
+       color:white;
+      }
     </style>
+   
+    
 </head>
 
 <body>
@@ -277,6 +315,11 @@
                     <input type="text" id="law-rep-name" name="law-rep-name" placeholder="Defendants Name" required>
                 </div>
             </form>
+            <!-- calendar -->
+            <div id="calendar">
+                <div id="dycalendar"></div>
+
+            </div>
         </div>
         <div class="right-container">
             <div class="right-box">
@@ -303,5 +346,18 @@
             </div>
         </div>
     </div>
+
+
+    <script src="dycalendar.js"></script>
+    <script>
+        dycalendar.draw({
+            target:"#dycalendar",
+            type:"month",
+            dayformat:"full",
+            monthformat:"full",
+            highlighttargetdate:true,
+            prevnextbutton:"show",
+        })
+    </script>
 </body>
 </html>
