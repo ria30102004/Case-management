@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="dycalendar.css">
     <title>View Past Hearings</title>
     <style>
         body,
@@ -18,16 +18,13 @@
             min-height: 100%;
             min-width: 100%;
         }
-
         .navbar {
             overflow: hidden;
             background-color: #ffdd9f;
         }
-
         .navbar-right {
             float: right;
         }
-
         .navbar a {
             float: left;
             font-size: 16px;
@@ -36,12 +33,10 @@
             padding: 14px 16px;
             text-decoration: none;
         }
-
         .dropdown {
             float: right;
             overflow: hidden;
         }
-
         .dropdown .dropbtn {
             font-size: 16px;
             border: none;
@@ -52,13 +47,11 @@
             font-family: inherit;
             margin: 0;
         }
-
         .navbar a:hover,
         .dropdown:hover .dropbtn {
             background-color: white;
             border-radius: 10px;
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
@@ -68,7 +61,6 @@
             z-index: 1;
             right: 0;
         }
-
         .dropdown-content a {
             float: none;
             color: black;
@@ -77,19 +69,15 @@
             display: block;
             text-align: left;
         }
-
         .dropdown-content a:hover {
             background-color: white;
         }
-
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
         .fa-bars {
             color: #603813;
         }
-
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -98,7 +86,6 @@
             padding: 2vh 2vh 2vh 2vh;
             height: calc(100vh - 10vh);
         }
-
         .left-box {
             flex: 1;
             background-color: white;
@@ -106,17 +93,14 @@
             margin-right: 30px;
             margin-left: 30px;
             border-radius: 15px;
-            margin-bottom: 203px;
+            margin-bottom: 15px;
             max-height: fit-content;
-
         }
-
         .right-container {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
-
         .right-box {
             background-color: white;
             padding: 25px;
@@ -125,27 +109,23 @@
             border-radius: 15px;
             max-height: fit-content;
         }
-
         .right-box h2 {
             text-align: left;
             color: #603813;
             margin-top: 3px;
             margin-bottom: 10px;
         }
-
         .form-group {
             margin-bottom: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
-
         .form-group input[type="text"],
         .form-group input[type="date"] {
             background-color: #D9D9D9;
@@ -155,7 +135,6 @@
             border-radius: 20px;
             font-size: 14px;
         }
-
         .tabs {
             display: flex;
             align-items: flex-start;
@@ -165,29 +144,24 @@
             align-items: center;
             border-radius: 8px;
         }
-
         .tab-btn {
             padding: 10px 20px;
             border: none;
             background-color: transparent;
             cursor: pointer;
         }
-
         .tab-btn.active {
             background-color: #ffdd9f;
             border-radius: 8px;
         }
-
         .tab-content {
             display: none;
             padding: 20px;
             height: 120px;
         }
-
         .tab-content.active {
             display: block;
         }
-
         .forms-group button[type="submit"] {
             background-color: #603813;
             color: white;
@@ -196,18 +170,15 @@
             border-radius: 10px;
             cursor: pointer;
         }
-
         .forms-group {
             margin-bottom: 20px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
         }
-
         .forms-group button[type="submit"]:hover {
             background-color: #8B4513;
         }
-
         .forms-group input[type="text"] {
             flex: 1;
             background-color: #D9D9D9;
@@ -217,20 +188,58 @@
             font-size: 14px;
             width: 100%;
         }
+        #calendar {
+       border: 1.2px solid #0e0d0d;
+       text-align: center;
+       height: 248px;
+       width: 300px;
+       margin: auto;
+       padding: auto;
+       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #calendar #dycalendar{
+        width: 100%;
+        padding: 3px;
+      }
+      #dycalendar table{
+        width: 100%;
+        margin-top: 8px;
+      }
+      #dycalendar table td{
+       font-weight: 600;
+       color:#0f0f0f;
+      }
+      #dycalendar .dycalendar-header{
+        font-weight: 600;
+         color:#0f0f0f;
+      }
+      #dycalendar .dycalendar-target-date{
+       background-color:#8b4513;;
+       color:white;
+      }
     </style>
 </head>
 
 <body>
+    <div class="navbar">
   <div class="navbar">
         <div class="navbar-right">
+            <a href="#news"><strong>View Past Hearings</strong></a>
+            <a href="#news"><strong>Case Details</strong></a>
             <a href="#home"><strong>Case Details</strong></a>
             <a href="#news"><strong>Book a Hearing</strong></a>
             <a href="#news"><strong>Bills and Payment</strong></a>
             <div class="dropdown">
+                <button class="dropbtn">
                 <button class="dropbtn"> 
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div class="dropdown-content">
+                    <a href="#">Hello!</a>
                     <a href="#">Hey!</a>
                     <a href="#">Notification</a>
                     <a href="#">Home</a>
@@ -241,7 +250,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="left-box">
             <h2 style="text-align: center; color:#603813;margin-bottom: 10px;">Case Details</h2>
@@ -259,8 +267,12 @@
                     <input type="text" id="law-rep-name" name="law-rep-name" placeholder="Rishabh Bhatia" required>
                 </div>
             </form>
-        </div>
+              <!-- calendar -->
+              <div id="calendar">
+                <div id="dycalendar"></div>
 
+            </div>
+        </div>
         <div class="right-container">
             <div class="right-box">
                 <h2>Past Hearings</h2>
@@ -281,7 +293,6 @@
                         congue elementum.</p>
                 </div>
             </div>
-
             <div class="right-box lawyer-box">
                 <h2>Lawyer Remarks</h2>
                 <div class="forms-group">
@@ -292,27 +303,32 @@
         </div>
     </div>
     </div>
-
+    
+            
+    <script src="dycalendar.js"></script>
     <script>
+        dycalendar.draw({
+            target:"#dycalendar",
+            type:"month",
+            dayformat:"full",
+            monthformat:"full",
+            highlighttargetdate:true,
+            prevnextbutton:"show",
+        })
         function toggleTab(tabId) {
             var tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(function (content) {
                 content.style.display = 'none';
             });
-
             var selectedTab = document.getElementById(tabId);
             if (selectedTab) {
                 selectedTab.style.display = 'block';
             }
-
             var tabButtons = document.querySelectorAll('.tab-btn');
             tabButtons.forEach(function (button) {
                 button.classList.remove('active');
             });
-
             event.currentTarget.classList.add('active');
         }
     </script>
 </body>
-
-</html>
