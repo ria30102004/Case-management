@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,6 @@
         .navbar {
             overflow: hidden;
             background-color: #ffdd9f;
-
         }
 
         .navbar-right {
@@ -98,7 +98,6 @@
 
         .div1 {
             flex: 20%;
-            /* Set div1 to occupy 20% of the available space */
             background-color: white;
             margin: 20px 25px 20px 20px;
             padding: 10px;
@@ -108,7 +107,6 @@
 
         .div2 {
             flex: 80%;
-            /* Set div2 to occupy 80% of the available space */
             background-color: white;
             margin: 20px 20px 20px 0;
             padding: 20px;
@@ -175,9 +173,9 @@
 
         .filtering {
             display: inline-block;
-            justify-items: space-around;
             padding-right: 47px;
             font-size: 18px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -230,21 +228,24 @@
                         </select>
                     </center>
                 </div>
-                <table border="black" id="paymentsTable">
-                    <div class="filtering ">
-                        <center>
-                            From Date:
-                            <input type="date" id="fromDateFilter">
-                        </center>
-                    </div>
-                    <div class="filtering">
-                        <center>
-                            To Date:
-                            <input type="date" id="toDateFilter">
-                        </center>
-                    </div>
+                <div class="filtering">
+                    <center>
+                        From Date:
+                        <input type="date" id="fromDateFilter">
+                    </center>
+                </div>
+                <div class="filtering">
+                    <center>
+                        To Date:
+                        <input type="date" id="toDateFilter">
+                    </center>
+                </div>
+                <center>
                     <button class="center-button" id="filterButton">Apply Filter</button>
-                    <br>
+                </center>
+                <br>
+                <table border="black" id="paymentsTable">
+                    <caption>Past Payments</caption>
                     <tr>
                         <th>Sr No.</th>
                         <th>Date</th>
@@ -275,6 +276,7 @@
                     </tr>
                 </table>
                 <table border="black" id="paymentsTableR">
+                    <caption>Due Payments</caption>
                     <tr>
                         <th>Sr No.</th>
                         <th>Due Date</th>
@@ -301,6 +303,7 @@
                     </tr>
                 </table>
                 <table border="black" id="paymentsTableF">
+                    <caption>Future Payments</caption>
                     <tr>
                         <th>Sr No.</th>
                         <th>Case ID</th>
@@ -333,42 +336,57 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const pastPaymentsOption = document.getElementById("pastPaymentsOption");
-            const remainingPaymentOption = document.getElementById("remainingPaymentOption");
-            const futurePaymentOption = document.getElementById("futurePaymentOption");
+            const fromDateInput = document.getElementById("fromDateFilter");
+            const toDateInput = document.getElementById("toDateFilter");
+            const filterButton = document.getElementById("filterButton");
             const paymentsTable = document.getElementById("paymentsTable");
             const paymentsTableR = document.getElementById("paymentsTableR");
             const paymentsTableF = document.getElementById("paymentsTableF");
 
-           
+            filterButton.addEventListener("click", function () {
+                const fromDate = new Date(fromDateInput.value);
+                const toDate = new Date(toDateInput.value);
+
+                // Loop through the table rows and show/hide them based on date range
+                const rows = paymentsTable.querySelectorAll("tr");
+                for (let i = 1; i < rows.length; i++) {
+                    const date = new Date(rows[i].cells[1].textContent); // Assuming date is in the second cell (index 1)
+                    if (date >= fromDate && date <= toDate) {
+                        rows[i].style.display = ""; // Show the row
+                    } else {
+                        rows[i].style.display = "none"; // Hide the row
+                    }
+                }
+            });
+
+            const pastPaymentsOption = document.getElementById("pastPaymentsOption");
+            const remainingPaymentOption = document.getElementById("remainingPaymentOption");
+            const futurePaymentOption = document.getElementById("futurePaymentOption");
+
             function hideTables() {
                 paymentsTable.style.display = "none";
                 paymentsTableR.style.display = "none";
                 paymentsTableF.style.display = "none";
             }
 
-            
             function displayPastPaymentsTable() {
                 hideTables();
                 paymentsTable.style.display = "table";
-                pastPaymentsOption.classList.add("active"); 
+                pastPaymentsOption.classList.add("active");
             }
 
-            
             function displayRemainingPaymentsTable() {
                 hideTables();
                 paymentsTableR.style.display = "table";
-                remainingPaymentOption.classList.add("active"); 
+                remainingPaymentOption.classList.add("active");
             }
 
-            
             function displayFuturePaymentsTable() {
                 hideTables();
                 paymentsTableF.style.display = "table";
-                futurePaymentOption.classList.add("active"); 
+                futurePaymentOption.classList.add("active");
             }
 
-            
             pastPaymentsOption.addEventListener("click", function () {
                 displayPastPaymentsTable();
             });
@@ -381,11 +399,9 @@
                 displayFuturePaymentsTable();
             });
 
-            
             displayPastPaymentsTable();
         });
     </script>
-
 </body>
 
 </html>
