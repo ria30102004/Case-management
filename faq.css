@@ -14,6 +14,7 @@ body{
 }
 
 h1{
+    margin-top: 8vh;
     color: #603813;
     padding-top: 40px;
     padding-left: 10px;
@@ -55,9 +56,9 @@ h4{
 .photo{
     background-color: #603813;
     height: 93vh;
-    position: fixed;
-    top:7vh;
-    right: 0;
+
+    margin-top: -7vh;
+    margin-left: 5vh;
     justify-content:center;
 }
 
