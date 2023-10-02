@@ -15,19 +15,30 @@
 .tabs {
   display: flex;
   flex-wrap: wrap;
-  width: 680px;
+  width: 670px;
   margin: auto; 
 }
 .tabs__box {
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border-radius: 0 10px 10px 10px;
   border: 2px solid white;
   height: auto; 
-  width: 680px; 
+  width: 670px; 
   background-color: white;
   padding: 20px;
+  padding-top: 0;
   margin: 10px;
-  text-align: center;
+  margin-top: 0px;
+  /* text-align: center; */
   
+}
+
+.tab_trial {
+  padding: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px 10px 0 0;
+  background-color: white;  
 }
 .tabs__label {
   padding: 10px 16px;
@@ -46,15 +57,16 @@
   width: 100%;
   line-height: 1.5;
   font-size: 0.9em;
-  display: none;
+  display: block;
+  text-align: center;
 }
-.tabs__radio:checked + .tabs__label {
+/*.tabs__radio:checked + .tabs__label {
   font-weight: bold;
   color: #603813;
-}
-.tabs__radio:checked + .tabs__label + .tabs__content {
+}*/
+/*.tabs__radio:checked + .tabs__label + .tabs__content {
   display: block;
-}
+}*/
 .container {
   width: 100%;
   min-height: 100vh;
@@ -208,11 +220,14 @@
 
     <div class="col-2">
       <div class="tabs">
+        <div class="tab_trial">
+        <label >Organisation</label>
+      </div>
         <div class="tabs__box">
-          <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
-            
-          <label for="tab1" class="tabs__label" style="color: #FFDD9F; margin-right: 470px;">Organisation</label>
-          
+          <!-- <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked> -->
+                
+          <!-- <label for="tab1" class="tabs__label" style="color: #FFDD9F;"></label> -->
+        
           <div class="tabs__content">
             <p style="text-align: left;"><br>e-Adalat is a one-stop solution for all your legal proceedings. Continue your journey with us and enjoy a seamless experience.</p>
             <p style="text-align: left;"><strong>Key features:</strong></p>
@@ -223,8 +238,11 @@
               <li style="text-align: left;">Experience the use of a fully organized data system.</li>
               <li style="text-align: left;">Receive preplanned times and dates for your cases.</li>
             </ol>
-            <button style="margin-right: 375px;" class="button">Try free trial for one week</button>
           </div>
+          <div style="text-align: right;">
+            <button style="text-align: center;" class="button">Try free trial for one week</button>
+          </div>
+            <!-- </div> -->
         </div>
       </div>
       <div class="section">

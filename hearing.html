@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Hearing</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <style>
-
 
 body, h1, p {
   margin: 0;
@@ -101,11 +101,10 @@ body, h1, p {
   margin: 48px;
   text-align: center;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center horizontally */
-  
 }
 .box h2 {
     font-size: 2rem;
@@ -177,6 +176,13 @@ body, h1, p {
   display: block;
 }
 
+.click {
+  color: #603813;
+  font-weight: bold;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
 .center-button {
   background-color: #603813;
   color: white;
@@ -187,7 +193,7 @@ body, h1, p {
   margin-top: 10px;
   display: block;
   text-align: right;
-  margin-left: 85px;
+  margin-left: 120px;
   
 }
 /* Adjust the CSS for the "Attached Written Documents" label */
@@ -199,7 +205,11 @@ body, h1, p {
 /* Adjust the width and padding of the file input button */
 .black-box .form-group input[type="file"] {
     width: auto; /* Allow it to adjust its width automatically */
-    padding: 10px; /* Adjust padding for better spacing */
+    padding: 0px; /* Adjust padding for better spacing */
+}
+
+input[type="text"] , input[type="date"]{
+  height: 8px;
 }
 #caseID::placeholder {
     color: red; 
@@ -210,18 +220,47 @@ body, h1, p {
 #timeAllocated::placeholder {
     color: red; 
 }
-.anc{
-  cursor: pointer;
-  text-decoration: none;
-  color: #603813;
-}
-.anc:hover{
-  text-decoration: underline;
 
+label ,input, select, option{
+  font-family: 'Karla';
 }
+
+.form-row-spec {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.form-row-spec .form-group {
+  margin-top: 10px;
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+
+#loc {
+  padding-top: 5px;
+}
+
+select {
+  width: 100px;
+  background-color: white;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #603813;
+}
+
+/*.btn {
+  background-color: white;
+  border: 2px solid #603813;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}*/
+
 
 </style>
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <div class="navbar">
         <!-- Use a right-aligned wrapper div for navigation links -->
         <div class="navbar-right">
@@ -251,28 +290,29 @@ body, h1, p {
                 <!-- Black bordered box -->
                 <div class="black-box">
                     <form>
-                        <div class="form-group">
-                            <label for="haveLawyer">Do you have a lawyer?</label>
-                            <input type="checkbox" id="haveLawyer" name="haveLawyer">
-                        </div>
                         
-                        <div class="form-row">
+                        
+                        <div class="form-row-spec">
                             <div class="form-group col-md-6">
-                                <input type="text" id="caseID" name="caseID" placeholder="Enter Case Type">
+                                <!-- <input type="text" id="caseID" name="caseID" placeholder="Enter Case Type"> -->
+                                <label for="Case Type">Case Type :</label>
+                                <select name="Case Type">
+                                  <option>Criminal</option>
+                                  <option>Co-operative</option>
+                                  <option>Civil</option>
+                                </select> 
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="text" id="trialNumber" name="trialNumber" placeholder="Enter Case Id">
+                                <!-- <input type="text" id="trialNumber" name="trialNumber" placeholder="Enter Case Id"> -->
+                                <label for="Case ID">Case ID :</label>
+                                <select name="Case ID">
+                                  <option>C154326</option>
+                                  <option>FI32426</option>
+                                  <option>CP94876</option>
+                                </select> 
                             </div>
                         </div>
-                    
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <input type="text" id="location" name="location" placeholder="Enter Location Availability">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input type="text" id="price" name="price" placeholder="Enter Price">
-                            </div>
-                        </div>
+      
 
                         <div class="form-row">
                             <div class="form-group col-md-6"> 
@@ -282,10 +322,33 @@ body, h1, p {
                                 <input type="date" id="date" name="date">
                             </div>
                         </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-6" id="loc">
+                              <!-- <input type="text" id="location" name="location" placeholder="Enter Location Availability"> -->
+                              <label for="Location">Location :</label>
+                              <select name="Location">
+                                <option>Mumbai</option>
+                                <option>Delhi</option>
+                                <option>Kanpur</option>
+                              </select> 
+                          </div>
+                          <div class="form-group col-md-6">
+                              <input type="text" id="price" name="price" placeholder="Enter Price">
+                          </div>
+                        </div>
                     
                         <div class="form-group">
+                          <label for="haveLawyer">Do you have a lawyer?</label>
+                          <input type="radio" name="Lawyer"><label for="Yes">Yes</label>
+                          <input type="radio" name="Lawyer"><label for="No">No</label>
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="writtenDocuments">Attached Written Documents:</label>
-                            <input type="file" id="writtenDocuments" name="writtenDocuments">
+                            <input type="file" id="files" name="writtenDocuments">
+                            <!-- <label for="files" class="btn">Attach</label> No file choosen... -->
+                            <!-- <input type="file" id="files" style="visibility: hidden;" name="writtenDocuments"> -->
                         </div>                   
                     </form>
                     
@@ -294,8 +357,10 @@ body, h1, p {
                     <label>
                         <input type="checkbox"> Do you confirm your booking?
                     </label>
-                    <p style="color: #603813 ; margin-top: 4px; font-weight: bold;">Do you want to create a new hearing? <a class="anc" href="https://efiling.ecourts.gov.in">Click here</a></p>
                     <button class="center-button">Proceed to Pay</button>
+                    <div class="click">
+                    Do you want to create a new hearing?<a href="">Click here</a>
+                    </div>
                 </div>
             </div> 
         </div>
