@@ -257,8 +257,8 @@
 <body>
     <div class="navbar">
         <div class="navbar-right">
-            <a href="#news"><strong>View Past Hearings</strong></a>
-            <a href="#news"><strong>Case Details</strong></a>
+            <a href="View_past_hearing.html"><strong>View Past Hearings</strong></a>
+            <a href="casedetails.html"><strong>Case Details</strong></a>
             <div class="dropdown">
                 <button class="dropbtn">
                     <i class="fa-solid fa-bars"></i>
@@ -266,10 +266,10 @@
                 <div class="dropdown-content">
                     <a href="#">Hello!</a>
                     <a href="#">Notification</a>
-                    <a href="#">Home</a>
-                    <a href="#">Profile</a>
-                    <a href="#">Help</a>
-                    <a href="#">Logout</a>
+                    <a href="landingpage.html">Home</a>
+                    <a href="">Profile</a>
+                    <a href="faq.html">Help</a>
+                    <a href="landingpage.html">Logout</a>
                 </div>
             </div>
         </div>
