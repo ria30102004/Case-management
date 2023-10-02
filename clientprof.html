@@ -72,6 +72,65 @@
     display: flex;
     margin-bottom: 1vh;
 }
+        .dropdown-content-notification {
+    display: none;
+    position: absolute;
+    background-color: #ffdd9f;
+    min-width: 400px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 160px; 
+    top: 0;
+}
+.noti-hover:hover .dropdown-content-notification {
+    display: block;
+}
+@font-face {
+    font-family: Righteous;
+    src: url('Righteous-Regular.ttf');
+}
+
+/***************************************************************/
+
+.spec-head {
+    padding: 20px;
+    font-family: 'Montserrat'; 
+}
+
+.tabs {
+    display: inline-block;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    font-family: Righteous;
+}
+
+.case-noti , .acc {
+    padding: 20px;
+    padding-top: 0px;  
+    font-size: 14px;
+    font-family: 'Montserrat';  
+}
+
+.acc {
+    display: none;
+}
+
+#casetab {
+    border-bottom: 2px solid #603813;
+}
+
+.time {
+    font-size: 12px;
+    color: rgb(100, 98, 89);
+}
+
+.noti {
+    border-bottom: 1px solid #603813;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
     </style>
 </head>
 <body>
@@ -87,7 +146,48 @@
             </button>
             <div class="dropdown-content">
               
-              <a href="#">Notification</a>
+              <div class="noti-hover">
+                    <a href="#">Notification</a>
+                    <div class="dropdown-content-notification">
+                          
+                      <h3 class="spec-head">Notifications</h3>
+                      <div class="tabs" id="casetab" onclick="casetabclick()">Case</div>
+                      <div class="tabs" id="acctab" onclick="acctabclick()">Account</div>
+                      <div class="case-noti" id="casein">
+                          <div class="noti">
+                              Next hearing on 22/10/2023.
+                              <div class="time">2 hours ago</div>
+                          </div>
+                          <div class="noti">
+                              Rs.20,000 Payment remaining for booking.
+                              <div class="time">3 hours ago</div>
+                          </div>
+                          <div class="noti">
+                            Summary uploaded.
+                            <div class="time">7 hours ago</div>
+                          </div>
+                          <div class="noti">
+                            Comment uploaded.
+                            <div class="time">7 hours ago</div>
+                          </div>
+                      </div>
+                      <div class="acc" id="accin">
+                          <div class="noti">
+                              Check out the credential updates.
+                              <div class="time">2 hours ago</div>
+                          </div>
+                          <div class="noti">
+                              Verify your email address.
+                              <div class="time">10 hours ago</div>
+                          </div>
+                          <div class="noti">
+                              Account created on 28/9/2023 at 10:00.
+                              <div class="time">21 hours ago</div>
+                          </div>
+                      </div>
+      
+                  </div>
+                  </div>
               <a href="landingpage.html">Home</a>
               <a href="casedetails.html">Cases</a>
               <a href="faq.html">Help</a>
@@ -159,5 +259,27 @@ list.classList.toggle('active');
     </div>
 </div>
 </div>
+    <script  type = "text/javascript">
+    var casetab = document.getElementById("casetab");
+    var acctab = document.getElementById("acctab");
+    var casein = document.getElementById('casein');
+    var accin = document.getElementById('accin');
+    
+    function casetabclick()
+    {
+        casetab.style.borderBottom = '2px solid #603813';
+        casein.style.display = 'block';
+        accin.style.display = 'none';
+        acctab.style.borderBottom = 'none';
+    }
+
+    function acctabclick()
+    {
+        acctab.style.borderBottom = '2px solid #603813';
+        accin.style.display = 'block';
+        casein.style.display = 'none';
+        casetab.style.borderBottom = 'none';
+    }
+</script>
 </body>
 </html>
